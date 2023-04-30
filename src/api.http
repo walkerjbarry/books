@@ -1,0 +1,41 @@
+//sample code for using REST Client Api extension for VS Code - still useful
+//to illustrate sample syntax for making api requests 
+//(syntax only applicable to using that extension)
+
+GET http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+# this request will get all records in the "books" database
+
+
+###
+
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+	"title":"Harry Potter"
+}
+
+# this request will create the record (the book, in this case) in the "books" db,
+# and generate an id for it (ID will default to "1" in this case)
+
+
+###
+
+PUT http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
+
+{
+	"title": "Dark Tower"
+}
+# this will update the record as desired 
+# (by updating the value of the title key in this case)
+
+
+###
+
+DELETE http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
+
+# this will delete a record (a book) from the "books" db
