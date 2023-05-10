@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\components",
-    "\\context"
+    "\\context",
+    "\\hooks"
   ],
-  "SelectedNode": "\\context\\books.js",
+  "SelectedNode": "\\hooks\\use-books-context.js",
   "PreviewInSolutionExplorer": false
 }
