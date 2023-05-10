@@ -14,7 +14,9 @@ function App() {
         fetchBooks()
     }, []);
 
-   
+   /*With useEffect, the SECOND ARGUMENT in this case [] is VERY significant.
+    in this case (an empty array) the second argument indicates that the arrow
+    function will be called after the initial render, and never called again*/
  
 
     return (
