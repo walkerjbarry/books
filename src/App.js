@@ -11,7 +11,7 @@ function App() {
     
 
     useEffect(() => {
-        fetchBooks()
+        fetchBooks();
     }, []);
 
    /*With useEffect, the SECOND ARGUMENT in this case [] is VERY significant.

@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useCallback } from 'react';
 import axios from 'axios';
 
 
@@ -9,11 +9,14 @@ function Provider({ children }) {
     const [books, setBooks] = useState([]);
 
 
-    const fetchBooks = async () => {
+    const fetchBooks = useCallback(async () => {
         const response = await axios.get('http://localhost:3001/books');
 
         setBooks(response.data);
-    };
+    }, []);
+    /*useCallback is a Hook that assists with fixing bugs around the use of 
+     * useEffect(like infinite loops), and other similar situations.
+     * Just like with useEffect, the second argument in useCallback is very significant.*/
 
     const editBookById = async (id, newTitle) => {
         const response = await axios.put(`http://localhost:3001/books/${id}`, {
@@ -52,7 +55,7 @@ function Provider({ children }) {
         const updatedBooks = [...books, response.data
         ];
         setBooks(updatedBooks);
-    };
+    }; 
 
     const valueToShare = {
         books,
